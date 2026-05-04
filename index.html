@@ -10,9 +10,20 @@
     <meta property="og:title" content="El Salvador Cultural Association of Edmonton | ESCA" />
     <meta property="og:description" content="Preserving and promoting Salvadoran cultural heritage in Edmonton, Alberta." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://esca-edmonton.ca" />
+    <meta property="og:url" content="https://escaedmonton.ca" />
 
     <meta name="twitter:card" content="summary_large_image" />
+
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      }(window.location));
+    </script>
   </head>
 
   <body>
