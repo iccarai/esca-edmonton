@@ -2,7 +2,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { useEffect } from 'react';
 
-const BEHOLD_FEED_ID = ''; // paste your Behold feed ID here once connected
+const BEHOLD_FEED_ID = 'zrWIVQGqZs94b1NA3UgW';
 
 const FB_URL = 'https://www.facebook.com/profile.php?id=61567303020814';
 const IG_URL = 'https://www.instagram.com/esca_edmonton';
