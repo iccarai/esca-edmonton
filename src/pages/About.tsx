@@ -16,21 +16,25 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h2 className="text-3xl font-serif-display font-bold text-foreground mb-8">{t('founder', 'title') as string}</h2>
+            <h2 className="text-3xl font-serif-display font-bold text-foreground mb-6">{t('founder', 'title') as string}</h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            <ScrollReveal direction="left">
-              <img src="/images/about/founder.jpg" alt="Alicia Dimas" className="rounded-2xl shadow-lg w-full" />
-            </ScrollReveal>
-            <ScrollReveal direction="right">
-              <div>
-                <h3 className="font-serif-display text-xl font-semibold text-secondary mb-4">{t('founder', 'name') as string}</h3>
-                {(t('founder', 'bio') as string[]).map((p, i) => (
-                  <p key={i} className="text-muted-foreground leading-relaxed mb-3 text-sm">{p}</p>
-                ))}
+          <ScrollReveal>
+            <div className="overflow-hidden">
+              <div className="float-left mr-8 mb-4 w-48 md:w-64 shrink-0">
+                <img
+                  src="/images/about/founder.jpg"
+                  alt="Alicia Dimas"
+                  className="rounded-2xl shadow-lg w-full"
+                />
+                <p className="text-center text-sm text-secondary font-semibold mt-3">
+                  {t('founder', 'name') as string}
+                </p>
               </div>
-            </ScrollReveal>
-          </div>
+              {(t('founder', 'bio') as string[]).map((p, i) => (
+                <p key={i} className="text-muted-foreground leading-relaxed mb-4 text-sm">{p}</p>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
