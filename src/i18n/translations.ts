@@ -4,7 +4,7 @@ export const translations = {
   nav: {
     home: { en: 'Home', es: 'Inicio' },
     about: { en: 'About', es: 'Acerca de' },
-    aliciasStory: { en: 'Alicia', es: 'Alicia' },
+    aliciasStory: { en: 'The Founder', es: 'La Fundadora' },
     events: { en: 'Events', es: 'Eventos' },
     gallery: { en: 'Gallery', es: 'Galería' },
     getInvolved: { en: 'Get Involved', es: 'Participa' },
