@@ -117,7 +117,7 @@ export const translations = {
     email: { en: 'esca@escaedmonton.ca', es: 'esca@escaedmonton.ca' },
     followUs: { en: 'Follow Us', es: 'Síguenos' },
     rights: { en: '© 2026 El Salvador Cultural Association of Edmonton. All rights reserved.', es: '© 2026 Asociación Cultural de El Salvador de Edmonton. Todos los derechos reservados.' },
-    credit: { en: 'Site Created & Built by Alex —', es: 'Sitio creado y desarrollado por Alex —' },
+    credit: { en: 'Site Created & Built by Alex for ICC -', es: 'Sitio creado y desarrollado por Alex para ICC -' },
   },
   about: {
     title: { en: "Alicia's Story", es: 'La Historia de Alicia' },

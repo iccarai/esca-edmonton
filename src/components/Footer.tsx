@@ -56,8 +56,8 @@ const Footer = () => {
           <p className="text-sm text-primary-foreground/50">{t('footer', 'rights') as string}</p>
           <p className="text-xs text-primary-foreground/30 mt-2">
             {t('footer', 'credit') as string}{' '}
-            <a href="mailto:info@independentcc.com" className="hover:text-secondary transition-colors">
-              info@independentcc.com
+            <a href="https://independentcc.com" className="hover:text-secondary transition-colors">
+              independentcc.com
             </a>
           </p>
         </div>
