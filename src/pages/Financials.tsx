@@ -1,10 +1,13 @@
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useSeo } from '@/hooks/useSeo';
+import { PAGE_SEO } from '@/lib/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { FileText, Download } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Financials = () => {
   const { t } = useLanguage();
+  useSeo(PAGE_SEO.financials);
 
   return (
     <div className="pt-20">

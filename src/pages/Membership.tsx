@@ -9,9 +9,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Users, Heart, Handshake, Calendar, BookOpen, Globe, Send, Megaphone, Award, Building2, PersonStanding } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useSeo } from '@/hooks/useSeo';
+import { PAGE_SEO } from '@/lib/seo';
 
 const GetInvolved = () => {
   const { t } = useLanguage();
+  useSeo(PAGE_SEO.membership);
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',

@@ -1,5 +1,8 @@
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useSeo } from '@/hooks/useSeo';
+import { PAGE_SEO } from '@/lib/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { JsonLd } from '@/components/JsonLd';
 import { useEffect } from 'react';
 
 const BEHOLD_FEED_ID = 'zrWIVQGqZs94b1NA3UgW';
@@ -26,8 +29,42 @@ const SOCIALS = [
   },
 ];
 
+const ALEGRIA_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Alegría, Latin American Cultures',
+  description:
+    'A celebration of Latin American cultures with performances, food, art and dance, presented by the El Salvador Cultural Association of Edmonton in partnership with the University of Alberta Botanic Garden.',
+  startDate: '2026-08-23T14:00:00-06:00',
+  endDate: '2026-08-23T20:00:00-06:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  image: 'https://escaedmonton.ca/images/events/alegria-poster.jpg',
+  location: {
+    '@type': 'Place',
+    name: 'University of Alberta Botanic Garden',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '51227 AB-60',
+      addressLocality: 'Parkland County',
+      addressRegion: 'AB',
+      postalCode: 'T7Y 1C5',
+      addressCountry: 'CA',
+    },
+  },
+  organizer: { '@id': 'https://escaedmonton.ca/#organization' },
+  sponsor: [
+    { '@type': 'Organization', name: 'University of Alberta Botanic Garden' },
+    { '@type': 'Organization', name: 'Edmonton Heritage Council' },
+    { '@type': 'Organization', name: 'Shoppers Drug Mart' },
+    { '@type': 'Organization', name: 'Inter-Can Immigration Services' },
+    { '@type': 'Organization', name: 'Romero Entertainment' },
+  ],
+};
+
 const Events = () => {
   const { t } = useLanguage();
+  useSeo(PAGE_SEO.events);
 
   useEffect(() => {
     if (!BEHOLD_FEED_ID) return;
@@ -42,6 +79,7 @@ const Events = () => {
 
   return (
     <div className="pt-20">
+      <JsonLd data={ALEGRIA_SCHEMA} />
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-serif-display font-bold mb-4">

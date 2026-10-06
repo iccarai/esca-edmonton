@@ -1,4 +1,6 @@
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useSeo } from '@/hooks/useSeo';
+import { PAGE_SEO } from '@/lib/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Images } from 'lucide-react';
@@ -12,6 +14,7 @@ const images = Object.values(imageModules) as string[];
 
 const Gallery = () => {
   const { t } = useLanguage();
+  useSeo(PAGE_SEO.gallery);
   const [selected, setSelected] = useState<number | null>(null);
 
   const close = useCallback(() => setSelected(null), []);

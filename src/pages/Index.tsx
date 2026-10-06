@@ -1,9 +1,12 @@
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useSeo } from '@/hooks/useSeo';
+import { PAGE_SEO } from '@/lib/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Users, Heart, BookOpen } from 'lucide-react';
 
 const Index = () => {
   const { t } = useLanguage();
+  useSeo(PAGE_SEO.home);
 
   return (
     <div>

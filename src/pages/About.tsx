@@ -1,8 +1,11 @@
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useSeo } from '@/hooks/useSeo';
+import { PAGE_SEO } from '@/lib/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
 
 const About = () => {
   const { t } = useLanguage();
+  useSeo(PAGE_SEO.about);
 
   return (
     <div className="pt-20">
