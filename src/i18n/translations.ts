@@ -17,6 +17,7 @@ export const translations = {
   },
   hero: {
     title: { en: 'El Salvador Cultural Association of Edmonton', es: 'Asociación Cultural de El Salvador de Edmonton' },
+    subtitle: { en: 'A home for Salvadorans, Latinos and Latinas in Edmonton', es: 'Un hogar para salvadoreños, latinos y latinas en Edmonton' },
   },
   whoAreWe: {
     title: { en: 'What Is ESCA?', es: '¿Qué Es ESCA?' },
@@ -38,8 +39,8 @@ export const translations = {
     pillar1: {
       title: { en: 'Connecting The Disconnected', es: 'Conectando a los Desconectados' },
       desc: {
-        en: 'The El Salvador Cultural Association of Edmonton is dedicated to preserving and promoting the rich cultural heritage of El Salvador. We aim to ensure that the new generation remains deeply connected to their Salvadoran roots through educational programs, cultural activities, and community support.',
-        es: 'La Asociación Cultural de El Salvador de Edmonton está dedicada a preservar y promover el rico patrimonio cultural de El Salvador. Nuestro objetivo es asegurar que la nueva generación permanezca profundamente conectada con sus raíces salvadoreñas a través de programas educativos, actividades culturales y apoyo comunitario.',
+        en: "We bring the Salvadoran and Latin community in Edmonton together, so newcomers and families who've drifted from their roots have a place to reconnect with their culture and with each other.",
+        es: 'Unimos a la comunidad salvadoreña y latina de Edmonton para que los recién llegados y las familias que se han alejado de sus raíces tengan un lugar donde reconectar con su cultura y entre sí.',
       },
     },
     pillar2: {
@@ -79,6 +80,7 @@ export const translations = {
   },
   events: {
     title: { en: 'Events', es: 'Eventos' },
+    subtitle: { en: 'Salvadoran and Latin American cultural events in Edmonton, from pupusa fundraisers to Alegría.', es: 'Eventos culturales salvadoreños y latinoamericanos en Edmonton, desde ventas de pupusas hasta Alegría.' },
     upcomingTitle: { en: 'Upcoming Events', es: 'Próximos Eventos' },
     upcomingDesc: { en: 'Stay connected for events and announcements.', es: 'Mantente conectado para eventos y anuncios.' },
     pastTitle: { en: 'Past Events', es: 'Eventos Pasados' },
@@ -147,6 +149,7 @@ export const translations = {
   },
   gallery: {
     title: { en: 'Gallery', es: 'Galería' },
+    subtitle: { en: 'Moments from our pupusa fundraisers, cultural celebrations and community gatherings across Edmonton.', es: 'Momentos de nuestras ventas de pupusas, celebraciones culturales y reuniones comunitarias en Edmonton.' },
     all: { en: 'All', es: 'Todas' },
     comingSoon: { en: 'Coming Soon!', es: '¡Próximamente!' },
   },
@@ -245,6 +248,9 @@ export const translations = {
     toastSelectType: { en: 'Please select an inquiry type.', es: 'Por favor selecciona un tipo de consulta.' },
     toastSuccess: { en: 'Inquiry Sent!', es: '¡Consulta Enviada!' },
     toastSuccessDesc: { en: "Thank you for reaching out. We'll be in touch soon.", es: 'Gracias por contactarnos. Te responderemos pronto.' },
+  },
+  faq: {
+    title: { en: 'Frequently Asked Questions', es: 'Preguntas Frecuentes' },
   },
 } as const;
 

@@ -29,7 +29,7 @@ const Financials = () => {
                       <FileText className="h-7 w-7 sm:h-8 sm:w-8 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="font-serif-display text-lg sm:text-xl font-semibold">{t('financials', 'firstYear') as string}</h3>
+                      <h2 className="font-serif-display text-lg sm:text-xl font-semibold">{t('financials', 'firstYear') as string}</h2>
                       <p className="text-muted-foreground text-sm">ESCA '25 Year Report</p>
                     </div>
                   </div>

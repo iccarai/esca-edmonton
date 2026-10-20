@@ -2,6 +2,8 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useSeo } from '@/hooks/useSeo';
 import { PAGE_SEO } from '@/lib/seo';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { Faq } from '@/components/Faq';
+import { HOME_FAQ } from '@/i18n/faq';
 import { Users, Heart, BookOpen } from 'lucide-react';
 
 const Index = () => {
@@ -14,17 +16,22 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/hero/background.jpg)' }}
+          style={{ backgroundImage: 'url(/images/hero/el-salvador-coast.webp)' }}
         />
         <div className="absolute inset-0 bg-primary/70" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <ScrollReveal delay={200}>
-            <img src="/images/logos/esca-logo-white.png" alt="ESCA Logo" className="h-28 md:h-36 w-auto mx-auto mb-8" />
+            <img src="/images/logos/esca-logo-white.png" alt="ESCA Edmonton logo" width={798} height={348} className="h-28 md:h-36 w-auto mx-auto mb-8" />
           </ScrollReveal>
           <ScrollReveal delay={400}>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif-display font-bold text-primary-foreground leading-tight mb-4">
               {t('hero', 'title') as string}
             </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={500}>
+            <p className="text-lg md:text-xl text-primary-foreground/90 font-medium">
+              {t('hero', 'subtitle') as string}
+            </p>
           </ScrollReveal>
           <ScrollReveal delay={600}>
             <div className="w-24 h-1 bg-secondary mx-auto mt-6" />
@@ -43,7 +50,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
               <div className="flex justify-center">
-                <img src="/images/home/what-is-esca.jpg" alt="ESCA" className="w-full h-auto rounded-2xl shadow-lg" />
+                <img src="/images/home/el-salvador-hills-sunset.webp" alt="Sunset over the hills of El Salvador" width={1200} height={900} className="w-full h-auto rounded-2xl shadow-lg" />
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
@@ -76,8 +83,10 @@ const Index = () => {
               <div className="relative">
                 <img
                   src="/images/home/what-we-do.png"
-                  alt="El Salvador landscape"
-                  className="rounded-2xl shadow-2xl w-full"
+                  alt="El Salvador beach and pier lit up at night"
+                  width={600}
+                  height={800}
+                  className="rounded-2xl shadow-2xl w-full h-auto"
                 />
               </div>
             </ScrollReveal>
@@ -111,6 +120,7 @@ const Index = () => {
         </div>
       </section>
 
+      <Faq items={HOME_FAQ} />
     </div>
   );
 };

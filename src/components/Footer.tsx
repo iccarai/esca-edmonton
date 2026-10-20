@@ -53,8 +53,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center">
-          <p className="text-sm text-primary-foreground/50">{t('footer', 'rights') as string}</p>
-          <p className="text-xs text-primary-foreground/30 mt-2">
+          <p className="text-sm text-primary-foreground/75">{t('footer', 'rights') as string}</p>
+          <p className="text-xs text-primary-foreground/65 mt-2">
             {t('footer', 'credit') as string}{' '}
             <a href="https://independentcc.com" className="hover:text-secondary transition-colors">
               independentcc.com

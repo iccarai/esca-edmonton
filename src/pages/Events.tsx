@@ -85,7 +85,10 @@ const Events = () => {
           <h1 className="text-4xl md:text-5xl font-serif-display font-bold mb-4">
             {t('events', 'title') as string}
           </h1>
-          <div className="w-24 h-1 bg-secondary mx-auto" />
+          <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
+          <p className="text-lg opacity-90">
+            {t('events', 'subtitle') as string}
+          </p>
         </div>
       </section>
 
@@ -135,6 +138,8 @@ const Events = () => {
               <img
                 src="/images/events/alegria-poster.jpg"
                 alt={t('events', 'featuredName') as string}
+                width={900}
+                height={1600}
                 className="w-full h-full object-cover"
               />
 
@@ -202,6 +207,8 @@ const Events = () => {
               <img
                 src="/images/events/alegria-partners.jpg"
                 alt={t('events', 'sponsorsPartnersAlt') as string}
+                width={1080}
+                height={1350}
                 loading="lazy"
                 className="w-full rounded-3xl shadow-xl border border-border"
               />
@@ -210,6 +217,8 @@ const Events = () => {
               <img
                 src="/images/events/alegria-sponsors.jpg"
                 alt={t('events', 'sponsorsLogosAlt') as string}
+                width={1080}
+                height={1350}
                 loading="lazy"
                 className="w-full rounded-3xl shadow-xl border border-border"
               />
@@ -252,9 +261,12 @@ const Events = () => {
           <ScrollReveal delay={150}>
             <a href={FB_URL} target="_blank" rel="noopener noreferrer" className="block group">
               <img
-                src="/images/fb-screenshot.png"
-                alt="ESCA Facebook page"
-                className="rounded-2xl shadow-xl w-full transition-opacity group-hover:opacity-90"
+                src="/images/esca-facebook-page.webp"
+                alt="El Salvador Cultural Association of Edmonton Facebook page"
+                width={1200}
+                height={698}
+                loading="lazy"
+                className="rounded-2xl shadow-xl w-full h-auto transition-opacity group-hover:opacity-90"
               />
             </a>
           </ScrollReveal>

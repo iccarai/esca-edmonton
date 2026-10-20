@@ -5,15 +5,50 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Images } from 'lucide-react';
 
-const imageModules = import.meta.glob('/src/assets/gallery/*', {
+import type { Language } from '@/i18n/translations';
+
+const imageModules = import.meta.glob('/src/assets/gallery/*.webp', {
   eager: true,
   query: '?url',
   import: 'default',
-});
-const images = Object.values(imageModules) as string[];
+}) as Record<string, string>;
+
+// Alt text and intrinsic size per photo, keyed by file name. A photo added to
+// src/assets/gallery without an entry here falls back to a generic alt.
+const PHOTO_INFO: Record<string, { w: number; h: number; alt: Record<Language, string> }> = {
+  '01-esca-volunteer-preparing-salsa.webp': {
+    w: 1200, h: 1600,
+    alt: { en: 'ESCA volunteer preparing salsa cups for a community fundraiser in Edmonton', es: 'Voluntario de ESCA preparando salsa para una recaudación comunitaria en Edmonton' },
+  },
+  '02-esca-volunteers-in-kitchen.webp': {
+    w: 1600, h: 1200,
+    alt: { en: 'Two ESCA volunteers in Latina shirts making food in a community kitchen', es: 'Dos voluntarias de ESCA con camisetas Latina preparando comida en una cocina comunitaria' },
+  },
+  '03-esca-volunteers-salvadoran-flags.webp': {
+    w: 1600, h: 1200,
+    alt: { en: 'Three ESCA volunteers under a string of Salvadoran flags', es: 'Tres voluntarias de ESCA bajo una fila de banderas salvadoreñas' },
+  },
+  '04-esca-community-members.webp': {
+    w: 1200, h: 1600,
+    alt: { en: 'Members of the Salvadoran and Latin community at an ESCA gathering in Edmonton', es: 'Miembros de la comunidad salvadoreña y latina en una reunión de ESCA en Edmonton' },
+  },
+  '05-esca-el-salvador-tent-alberta-avenue.webp': {
+    w: 1200, h: 1600,
+    alt: { en: 'ESCA volunteers at the El Salvador tent on Alberta Avenue in Edmonton', es: 'Voluntarios de ESCA en la carpa de El Salvador en Alberta Avenue, Edmonton' },
+  },
+  '06-esca-pupusa-booth-alberta-avenue.webp': {
+    w: 1600, h: 1200,
+    alt: { en: 'ESCA El Salvador booth serving pupusas on Alberta Avenue in Edmonton', es: 'Puesto de El Salvador de ESCA con pupusas en Alberta Avenue, Edmonton' },
+  },
+};
+
+const images = Object.entries(imageModules)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, src]) => ({ src, info: PHOTO_INFO[path.split('/').pop() ?? ''] }));
 
 const Gallery = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const altFor = (i: number) => images[i].info?.alt[language] ?? `ESCA gallery photo ${i + 1}`;
   useSeo(PAGE_SEO.gallery);
   const [selected, setSelected] = useState<number | null>(null);
 
@@ -46,7 +81,10 @@ const Gallery = () => {
           <h1 className="text-4xl md:text-5xl font-serif-display font-bold mb-4">
             {t('gallery', 'title') as string}
           </h1>
-          <div className="w-24 h-1 bg-secondary mx-auto" />
+          <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
+          <p className="text-lg opacity-90">
+            {t('gallery', 'subtitle') as string}
+          </p>
         </div>
       </section>
 
@@ -60,8 +98,8 @@ const Gallery = () => {
               </h2>
             </div>
           ) : (
-            <div className="columns-2 md:columns-3 lg:columns-4 gap-3 [column-fill:_balance]">
-              {images.map((src, i) => (
+            <div className="columns-2 md:columns-3 gap-3 [column-fill:_balance]">
+              {images.map(({ src, info }, i) => (
                 <ScrollReveal key={src}>
                   <button
                     onClick={() => setSelected(i)}
@@ -69,7 +107,9 @@ const Gallery = () => {
                   >
                     <img
                       src={src}
-                      alt={`ESCA gallery photo ${i + 1}`}
+                      alt={altFor(i)}
+                      width={info?.w}
+                      height={info?.h}
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
@@ -98,8 +138,8 @@ const Gallery = () => {
           </button>
 
           <img
-            src={images[selected]}
-            alt={`ESCA gallery photo ${selected + 1}`}
+            src={images[selected].src}
+            alt={altFor(selected)}
             className="max-h-[88vh] max-w-[88vw] object-contain rounded shadow-2xl"
             onClick={e => e.stopPropagation()}
           />

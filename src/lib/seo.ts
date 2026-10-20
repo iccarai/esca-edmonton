@@ -4,9 +4,9 @@
 export const PAGE_SEO = {
   home: {
     path: '/',
-    title: 'El Salvador Cultural Association of Edmonton | ESCA',
+    title: 'Salvadoran and Latin Community in Edmonton | ESCA',
     description:
-      'ESCA preserves and celebrates Salvadoran culture in Edmonton, Alberta through cultural events, education and community support. Join us.',
+      'ESCA brings Salvadorans, Latinos and Latinas in Edmonton together through Latin American cultural events, pupusa fundraisers and community support.',
   },
   about: {
     path: '/about',
@@ -16,21 +16,21 @@ export const PAGE_SEO = {
   },
   events: {
     path: '/events',
-    title: 'Salvadoran Cultural Events in Edmonton | ESCA',
+    title: 'Salvadoran and Latin American Events in Edmonton | ESCA',
     description:
-      'Upcoming and past ESCA events in Edmonton, including Alegría, Latin American Cultures at the University of Alberta Botanic Garden. Follow us for announcements.',
+      "Salvadoran and Latin cultural events in Edmonton, from pupusa fundraisers to Alegría at the University of Alberta Botanic Garden. See what's coming up.",
   },
   gallery: {
     path: '/gallery',
     title: 'Photo Gallery | El Salvador Cultural Association of Edmonton',
     description:
-      'Photos from ESCA cultural celebrations, fundraisers and community gatherings across Edmonton.',
+      'Photos from ESCA pupusa fundraisers, cultural celebrations and community gatherings with the Salvadoran and Latin community in Edmonton.',
   },
   membership: {
     path: '/membership',
-    title: 'Get Involved with ESCA | Membership and Volunteering',
+    title: 'Volunteer With the Latin Community in Edmonton | ESCA',
     description:
-      'Become a member, volunteer at our events or sponsor ESCA to help preserve Salvadoran culture in Edmonton.',
+      'Volunteer with ESCA, sponsor our events or partner with the Salvadoran and Latin community in Edmonton. No experience needed to volunteer.',
   },
   financials: {
     path: '/financials',

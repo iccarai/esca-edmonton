@@ -11,6 +11,8 @@ import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useSeo } from '@/hooks/useSeo';
 import { PAGE_SEO } from '@/lib/seo';
+import { Faq } from '@/components/Faq';
+import { GET_INVOLVED_FAQ } from '@/i18n/faq';
 
 const GetInvolved = () => {
   const { t } = useLanguage();
@@ -103,7 +105,9 @@ const GetInvolved = () => {
                 <div>
                   <img
                     src="/images/volunteer.jpeg"
-                    alt="Volunteers at the Pupusa Fundraiser"
+                    alt="ESCA volunteers at the Pupusa Fundraiser in Edmonton, January 2026"
+                    width={1536}
+                    height={2048}
                     className="w-full h-52 object-cover"
                   />
                   <p className="text-center text-xs text-muted-foreground italic py-2 bg-muted/40 border-b border-secondary/10">
@@ -296,6 +300,8 @@ const GetInvolved = () => {
           </ScrollReveal>
         </div>
       </section>
+
+      <Faq items={GET_INVOLVED_FAQ} />
     </div>
   );
 };
